@@ -1,0 +1,94 @@
+{
+  "urls": {
+    "url": "http://dummy.restapiexample.com"
+  },
+  "apis": {
+    "getEmployeeByID": "/api/v1/employee",
+    "createEmployee": "/api/v1/create"
+  },
+  "createEmployeeBody": {
+    "name": "test",
+    "salary": "123",
+    "age": "23"
+  },
+  "commonHeaders": {
+    "Content-type": "application/json",
+    "Accept": "application/json"
+  },
+  "employee1": {
+    "id": 1,
+    "name": "Tiger Nixon",
+    "salary": 320800,
+    "age": 61,
+    "image": ""
+  },
+  "getEmployeeTest_Data": {
+    "nullID": {
+      "id": null,
+      "expectedStatusCode": 200
+    },
+    "emptyID": {
+      "id": "",
+      "expectedStatusCode": 301
+    },
+    "specialCharactersID": {
+      "id": "@1#!",
+      "expectedStatusCode": 200
+    },
+    "tooLongID": {
+      "id": "876546216854987465432165468484765434",
+      "expectedStatusCode": 200
+    },
+    "notNumbersID": {
+      "id": "somestring",
+      "expectedStatusCode": 200
+    }
+  },
+  "createEmployeeTest_Data": {
+    "nullName": {
+      "name": null,
+      "age": "20",
+      "salary": "200000"
+    },
+    "specialCharName": {
+      "name": "@#'",
+      "age": "20",
+      "salary": "200000"
+    },
+    "longStingName": {
+      "name": "dhshdhaiuewhiuegfiasuegfpiasgfcpaiugwefpiaugpicgpiaguegvfpsaiugedviugsapdv",
+      "age": "20",
+      "salary": "200000"
+    },
+    "nullAge": {
+      "name": "TestName",
+      "age": null,
+      "salary": "200000"
+    },
+    "specialCharAge": {
+      "name": "TestName",
+      "age": "@@#$%",
+      "salary": "200000"
+    },
+    "longAge": {
+      "name": "TestName",
+      "age": "25465874954540",
+      "salary": "200000"
+    },
+    "nullSalary": {
+      "name": "TestName",
+      "age": "20",
+      "salary": null
+    },
+    "specialCharSalary": {
+      "name": "TestName",
+      "age": "20",
+      "salary": "@!##$$%"
+    },
+    "longSalary": {
+      "name": "TestName",
+      "age": "20",
+      "salary": "6455646548745432158464"
+    }
+  }
+}
